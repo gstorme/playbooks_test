@@ -1,0 +1,9 @@
+- hosts: com-awx001
+
+  tasks:
+  - name: get uptime
+    shell: uptime | grep -ohe 'up .*' | sed 's/,//g' | awk '{ print $2" "$3 }'
+    register: uptime
+
+  - debug:
+      var: uptime.stdout
