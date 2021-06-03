@@ -6,7 +6,7 @@
     win_domain_membership:
       dns_domain_name: "{{ domain }}"
       domain_admin_user: "{{ domains[domain]['domain_admin_user'] }}"
-      domain_admin_password: "{{ lookup('identityserver', tag=domains[domain]['tag'], type='administrator', login=domains[domain]['domain_admin_user'], domain=domain, is_internal=True) }}"
+      domain_admin_password: "{{ lookup('identityserver', tag=domains[domain]['tag'], type='user', login=domains[domain]['domain_admin_user'], domain=domain, is_internal=True) }}"
       state: domain
       domain_ou_path: "{{ domains[domain]['domain_ou_path'] }}"
     register: domain_state
