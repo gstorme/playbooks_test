@@ -1,5 +1,5 @@
 ---
-- hosts: L016215
+- hosts: winclient
 
   tasks:
   - name: join domain
